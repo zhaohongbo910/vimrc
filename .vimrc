@@ -5,9 +5,6 @@ func! SaveInputData()
 	exec "w! /tmp/input_data"
 endfunc
 
-
-
-
 "colorscheme torte
 "colorscheme murphy
 "colorscheme desert 
@@ -15,18 +12,15 @@ endfunc
 "colorscheme elflord
 colorscheme ron
 
-
-
-
 "set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 "set termencoding=utf-8
 set encoding=utf-8
 "set fileencodings=ucs-bom,utf-8,cp936
 "set fileencoding=utf-8
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""
 " 显示相关  
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""
 "set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示  
 "winpos 5 5          " 设定窗口位置  
 "set lines=40 columns=155    " 设定窗口大小  
@@ -75,21 +69,21 @@ autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()"
 func SetTitle() 
 	"如果文件类型为.sh文件 
 	if &filetype == 'sh' 
-		call setline(1,"\#########################################################################") 
+		call setline(1,"\##################################") 
 		call append(line("."), "\# File Name: ".expand("%")) 
 		call append(line(".")+1, "\# Author: ma6174") 
 		call append(line(".")+2, "\# mail: ma6174@163.com") 
 		call append(line(".")+3, "\# Created Time: ".strftime("%c")) 
-		call append(line(".")+4, "\#########################################################################") 
+		call append(line(".")+4, "\#########################") 
 		call append(line(".")+5, "\#!/bin/bash") 
 		call append(line(".")+6, "") 
 	else 
-		call setline(1, "/*************************************************************************") 
+		call setline(1, "/************************************") 
 		call append(line("."), "	> File Name: ".expand("%")) 
 		call append(line(".")+1, "	> Author: ma6174") 
 		call append(line(".")+2, "	> Mail: ma6174@163.com ") 
 		call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
-		call append(line(".")+4, " ************************************************************************/") 
+		call append(line(".")+4, " *****************************/") 
 		call append(line(".")+5, "")
 	endif
 	if &filetype == 'cpp'
@@ -108,9 +102,9 @@ func SetTitle()
 	"新建文件后，自动定位到文件末尾
 	autocmd BufNewFile * normal G
 endfunc 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""
 "键盘命令
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""
 
 nmap <leader>w :w!<cr>
 nmap <leader>f :find<cr>
@@ -161,9 +155,9 @@ endfunc
 
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""
 ""实用设置
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""
 " 设置当文件被改动时自动载入
 set autoread
 " quickfix模式
@@ -293,12 +287,7 @@ endfunction
 filetype plugin indent on 
 "打开文件类型检测, 加了这句才可以用智能补全
 set completeopt=longest,menu
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-
-
+""""""""""""""""""
 
 "NERDtee设定
 let NERDChristmasTree=1
